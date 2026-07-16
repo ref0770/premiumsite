@@ -198,12 +198,17 @@ html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
   width: 38px;
   height: 38px;
   border-radius: 11px;
-  background: linear-gradient(150deg, var(--color-gold-soft), var(--color-gold) 55%, #b8853a);
+  background: linear-gradient(150deg, #1a1b21, #0c0d10 65%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #14100a;
-  box-shadow: 0 6px 18px -4px rgba(224, 178, 98, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 18px -4px rgba(217, 67, 42, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.logo .logo-mark img {
+  display: block;
+  width: 22px;
+  height: 22px;
 }
 .main-nav {
   display: flex;
@@ -399,6 +404,38 @@ html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
 }
 @media (prefers-reduced-motion: reduce) {
   .aurora-blob { animation: none; }
+}
+
+/* ==========================================================================
+   Services section — faint brand-mark watermark background
+   ========================================================================== */
+#services {
+  position: relative;
+  overflow: hidden;
+}
+.services-bg-mark {
+  position: absolute;
+  top: -140px;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  filter: blur(1px);
+}
+.services-bg-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#services .container {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 700px) {
+  .services-bg-mark { width: 560px; height: 560px; top: -80px; }
 }
 .hero-grid {
   position: relative;

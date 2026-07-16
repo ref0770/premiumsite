@@ -614,6 +614,10 @@ def head(title, description, canonical_path, extra_ld=""):
   <meta property="og:type" content="website">
   <meta property="og:url" content="{canonical}">
   <meta name="theme-color" content="#0f1620">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -700,7 +704,7 @@ def header(active_path):
     )
     return f"""  <header class="site-header">
     <div class="container">
-      <a href="{href('/')}" class="logo"><span class="logo-mark">{icon_svg('key', 19)}</span>{BRAND}</a>
+      <a href="{href('/')}" class="logo"><span class="logo-mark"><img src="/assets/img/logo-mark.png" width="22" height="22" alt="" loading="eager"></span>{BRAND}</a>
       <nav class="main-nav" id="main-nav">
         <ul style="display:flex;gap:26px;flex-direction:inherit;align-items:inherit">
           <li><a href="{href('/')}"{cur("/")}>{t('nav_home')}</a></li>
@@ -986,6 +990,7 @@ def build_home():
   </section>
 
   <section id="services">
+    <div class="services-bg-mark" aria-hidden="true"><img src="/assets/img/icon-512.png" alt="" loading="lazy"></div>
     <div class="container">
       <div class="section-head reveal">
         <span class="tag">{t('services_tag')}</span>
