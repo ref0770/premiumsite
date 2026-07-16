@@ -990,7 +990,7 @@ def build_home():
   </section>
 
   <section id="services">
-    <div class="services-bg-mark" aria-hidden="true"><img src="/assets/img/icon-512.png" alt="" loading="lazy"></div>
+    <div class="services-bg-mark" aria-hidden="true"><img src="/assets/img/logo-mark.png" alt="" loading="lazy"></div>
     <div class="container">
       <div class="section-head reveal">
         <span class="tag">{t('services_tag')}</span>

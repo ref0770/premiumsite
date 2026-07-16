@@ -415,15 +415,15 @@ html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
 }
 .services-bg-mark {
   position: absolute;
-  top: -140px;
+  top: -90px;
   left: 50%;
-  width: 900px;
-  height: 900px;
+  width: 640px;
+  height: 640px;
   transform: translateX(-50%);
   z-index: 0;
   pointer-events: none;
-  opacity: 0.05;
-  filter: blur(1px);
+  opacity: 0.09;
+  filter: blur(2px);
 }
 .services-bg-mark img {
   width: 100%;
@@ -435,7 +435,7 @@ html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
   z-index: 1;
 }
 @media (max-width: 700px) {
-  .services-bg-mark { width: 560px; height: 560px; top: -80px; }
+  .services-bg-mark { width: 420px; height: 420px; top: -50px; }
 }
 .hero-grid {
   position: relative;
