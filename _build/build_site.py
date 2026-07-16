@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Generates the static KeySos site (uk at root, ru under /ru/) into the project folder.
 This script is a one-off scaffolding helper, not part of the delivered site."""
+import json
 import os
 import re
 
@@ -647,7 +648,7 @@ def local_business_ld():
 
 def faq_ld(faq_pairs):
     items = ",\n      ".join(
-        f'{{"@type":"Question","name":{q!r},"acceptedAnswer":{{"@type":"Answer","text":{a!r}}}}}'
+        f'{{"@type":"Question","name":{json.dumps(q, ensure_ascii=False)},"acceptedAnswer":{{"@type":"Answer","text":{json.dumps(a, ensure_ascii=False)}}}}}'
         for q, a in faq_pairs
     )
     return f"""  <script type="application/ld+json">
@@ -666,8 +667,8 @@ def service_ld(name, description, url_path):
   {{
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": {name!r},
-    "description": {description!r},
+    "name": {json.dumps(name, ensure_ascii=False)},
+    "description": {json.dumps(description, ensure_ascii=False)},
     "areaServed": "Київ",
     "provider": {{"@type": "HomeAndConstructionBusiness", "name": "{BRAND}"}},
     "url": "https://{DOMAIN}{href(url_path)}"
