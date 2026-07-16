@@ -7,7 +7,7 @@ import re
 ROOT = r"c:\Users\ПК\Desktop\САЙТ БЕЗ РЕКЛАМ"
 
 BRAND = "KeySos"
-DOMAIN = "keysos.kiev.ua"  # TODO: замінити на реальний домен
+DOMAIN = "keysos.kyiv.ua"  # TODO: замінити на реальний домен
 PHONE_DISPLAY = "063 296 21 21"
 PHONE_TEL = "tel:+380632962121"
 TELEGRAM_URL = "https://t.me/Nikolay2962121"

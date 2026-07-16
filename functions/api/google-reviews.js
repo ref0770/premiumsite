@@ -7,7 +7,7 @@
 
 const PLACE_ID = "ChIJUWnIZzwB6I8RSi2OgfAfuWI";
 // Matches the HTTP-referrer restriction already set on the API key in Google Cloud.
-const SITE_ORIGIN = "https://keysos.kiev.ua/";
+const SITE_ORIGIN = "https://keysos.kyiv.ua/";
 
 export async function onRequestGet(context) {
   const { request, env } = context;

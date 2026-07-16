@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://keysos.kiev.ua/sitemap.xml
+Sitemap: https://keysos.kyiv.ua/sitemap.xml
