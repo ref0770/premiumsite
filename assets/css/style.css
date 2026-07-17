@@ -853,6 +853,34 @@ html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
   padding: 20px;
   box-shadow: var(--shadow-1);
 }
+.legal-prose h2 {
+  font-size: 21px;
+  margin-top: 42px;
+  margin-bottom: 14px;
+}
+.legal-prose h2:first-child {
+  margin-top: 0;
+}
+.legal-prose p {
+  color: var(--color-text-dim);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+.legal-prose ul {
+  list-style: disc;
+  padding-left: 22px;
+  margin-bottom: 14px;
+}
+.legal-prose li {
+  color: var(--color-text-dim);
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+.legal-prose a {
+  color: var(--color-gold);
+  text-decoration: underline;
+  text-decoration-color: rgba(211, 170, 98, 0.35);
+}
 .quote {
   font-family: var(--font-head);
   font-size: 20px;
@@ -1057,6 +1085,10 @@ html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
   flex-wrap: wrap;
   gap: 12px;
   font-size: 13px;
+}
+.footer-bottom a:hover {
+  color: var(--color-gold);
+  text-decoration: underline;
 }
 .todo-flag {
   background: rgba(255, 90, 60, 0.1);
