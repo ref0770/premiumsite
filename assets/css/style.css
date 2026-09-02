@@ -1119,7 +1119,7 @@ html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
 }
 .mobile-bar .container { display: flex; gap: 10px; height: 100%; padding-block: 10px; }
 .mobile-bar a {
-  flex: 1;
+  flex: 1 1 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1129,9 +1129,7 @@ html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
   font-weight: 600;
   font-size: 13.5px;
 }
-.mobile-bar .mb-call { background: linear-gradient(135deg, #ff6a48, var(--color-urgent)); color: #fff; }
-.mobile-bar .mb-tg { background: rgba(255, 255, 255, 0.06); color: var(--color-text); border: 1px solid var(--color-border-strong); }
-.mobile-bar .mb-wa { background: rgba(255, 255, 255, 0.06); color: var(--color-text); border: 1px solid var(--color-border-strong); }
+.mobile-bar .mb-call { width: 100%; background: linear-gradient(135deg, #ff6a48, var(--color-urgent)); color: #fff; }
 @media (max-width: 900px) {
   .mobile-bar { display: block; }
 }

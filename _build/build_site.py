@@ -366,7 +366,7 @@ T = {
         review_note_todo="TODO: замінити на реальні відгуки з Google Business Profile",
         review_all_google="Переглянути всі відгуки в Google",
         offer_h3="-10% знижка при онлайн-заявці",
-        offer_p="Залиште заявку на сайті або напишіть у Telegram/WhatsApp — і отримайте знижку 10% на виклик майстра.",
+        offer_p="Залиште заявку на сайті — і отримайте знижку 10% на виклик майстра.",
         offer_btn="Отримати знижку",
         faq_default_heading="Часті запитання",
         districts_tag="Географія", districts_h2="Райони виїзду по Києву",
@@ -416,7 +416,7 @@ T = {
         kontakty_side_h="Викликати майстра",
         kontakty_side_p="Залиште заявку — передзвонимо протягом кількох хвилин.",
         kontakty_title=f"Контакти | {BRAND} — аварійне відкриття замків у Києві",
-        kontakty_description="Контакти служби аварійного відкриття замків KeySos у Києві: телефон, Telegram, WhatsApp, графік роботи.",
+        kontakty_description="Контакти служби аварійного відкриття замків KeySos у Києві: телефон, графік роботи та зона обслуговування.",
         rayony_index_breadcrumb="Райони виїзду", rayony_index_h1="Райони виїзду по Києву",
         rayony_index_lead="Аварійне відкриття замків, дверей, авто та сейфів у будь-якому районі Києва і найближчому передмісті. Оберіть свій масив, щоб побачити деталі виклику.",
         rayony_index_title=f"Райони виїзду по Києву | {BRAND} — аварійне відкриття замків",
@@ -470,7 +470,7 @@ T = {
         review_note_todo="TODO: заменить на реальные отзывы из Google Business Profile",
         review_all_google="Смотреть все отзывы в Google",
         offer_h3="-10% скидка при онлайн-заявке",
-        offer_p="Оставьте заявку на сайте или напишите в Telegram/WhatsApp — и получите скидку 10% на вызов мастера.",
+        offer_p="Оставьте заявку на сайте — и получите скидку 10% на вызов мастера.",
         offer_btn="Получить скидку",
         faq_default_heading="Частые вопросы",
         districts_tag="География", districts_h2="Районы выезда по Киеву",
@@ -520,7 +520,7 @@ T = {
         kontakty_side_h="Вызвать мастера",
         kontakty_side_p="Оставьте заявку — перезвоним в течение нескольких минут.",
         kontakty_title=f"Контакты | {BRAND} — аварийное вскрытие замков в Киеве",
-        kontakty_description="Контакты службы аварийного вскрытия замков KeySos в Киеве: телефон, Telegram, WhatsApp, график работы.",
+        kontakty_description="Контакты службы аварийного вскрытия замков KeySos в Киеве: телефон, график работы и зона обслуживания.",
         rayony_index_breadcrumb="Районы выезда", rayony_index_h1="Районы выезда по Киеву",
         rayony_index_lead="Аварийное вскрытие замков, дверей, авто и сейфов в любом районе Киева и ближайшем пригороде. Выберите свой массив, чтобы увидеть детали вызова.",
         rayony_index_title=f"Районы выезда по Киеву | {BRAND} — аварийное вскрытие замков",
@@ -786,9 +786,7 @@ def header(active_path):
 def mobile_bar():
     return f"""  <div class="mobile-bar">
     <div class="container">
-      <a href="{PHONE_TEL}" class="mb-call">{phone_icon()} {t('mobile_call')}</a>
-      <a href="{TELEGRAM_URL}" class="mb-tg" target="_blank" rel="noopener">Telegram</a>
-      <a href="{WHATSAPP_URL}" class="mb-wa" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="{PHONE_TEL}" class="mb-call">{phone_icon()} {PHONE_DISPLAY}</a>
     </div>
   </div>"""
 
@@ -996,7 +994,6 @@ def build_home():
         </ul>
         <div class="hero-actions">
           <a href="{PHONE_TEL}" class="btn btn-primary btn-lg">{phone_icon()} {PHONE_DISPLAY}</a>
-          <a href="{TELEGRAM_URL}" class="btn btn-glass btn-lg" target="_blank" rel="noopener">{t('write_telegram')}</a>
         </div>
         {rating_badge()}
       </div>
@@ -1174,7 +1171,7 @@ SERVICE_PAGE_CONTENT = {
                 ("Коли потрібне аварійне відкриття дверей",
                  "Найчастіші випадки: двері захлопнулись, а ключі лишились всередині; ключ загубився або зламався в замковій щілині; замок заклинило або він вийшов з ладу; двері заблоковані зсередини дитиною чи домашньою твариною."),
                 ("Як відбувається виклик",
-                 "Ви телефонуєте або пишете в Telegram/WhatsApp — диспетчер уточнює адресу і тип замка. Майстер виїжджає протягом 20-30 хвилин, на місці оцінює складність і озвучує точну ціну. Відкриття виконується спеціальними інструментами без пошкодження замка чи дверей у більшості випадків."),
+                 "Ви телефонуєте — диспетчер уточнює адресу і тип замка. Майстер виїжджає протягом 20-30 хвилин, на місці оцінює складність і озвучує точну ціну. Відкриття виконується спеціальними інструментами без пошкодження замка чи дверей у більшості випадків."),
                 ("Які замки ми відкриваємо",
                  "Врізні та накладні замки, циліндрові механізми, сувальдні замки, а також більшість моделей броньованих і металевих вхідних дверей."),
                 ("Чому варто звернутись саме до нас",
@@ -1195,7 +1192,7 @@ SERVICE_PAGE_CONTENT = {
                 ("Когда нужно аварийное вскрытие дверей",
                  "Самые частые случаи: дверь захлопнулась, а ключи остались внутри; ключ потерялся или сломался в замочной скважине; замок заклинило или он вышел из строя; дверь заблокирована изнутри ребёнком или домашним животным."),
                 ("Как проходит вызов",
-                 "Вы звоните или пишете в Telegram/WhatsApp — диспетчер уточняет адрес и тип замка. Мастер выезжает в течение 20-30 минут, на месте оценивает сложность и называет точную цену. Вскрытие выполняется специальными инструментами без повреждения замка или двери в большинстве случаев."),
+                 "Вы звоните — диспетчер уточняет адрес и тип замка. Мастер выезжает в течение 20-30 минут, на месте оценивает сложность и называет точную цену. Вскрытие выполняется специальными инструментами без повреждения замка или двери в большинстве случаев."),
                 ("Какие замки мы вскрываем",
                  "Врезные и накладные замки, цилиндровые механизмы, сувальдные замки, а также большинство моделей бронированных и металлических входных дверей."),
                 ("Почему стоит обратиться именно к нам",
@@ -1549,7 +1546,6 @@ def build_service_page(slug):
         <div style="font-size:12.5px;color:var(--color-text-dim);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px">{t('svc_price_label')}</div>
         <div class="price-tag" style="font-size:24px;color:var(--color-gold);font-weight:800;margin-bottom:14px">{sprice(svc)}</div>
         <a href="{PHONE_TEL}" class="btn btn-primary btn-block">{phone_icon()} {PHONE_DISPLAY}</a>
-        <a href="{TELEGRAM_URL}" class="btn btn-glass btn-block" target="_blank" rel="noopener">{t('write_telegram')}</a>
         <p style="margin-top:16px;font-size:13px">{t('svc_side_note')} {HOURS[LANG]}.</p>
       </aside>
     </div>
@@ -1664,8 +1660,6 @@ def build_vidhuky():
 
 def build_kontakty():
     info_cards = f"""<div class="info-card"><h3>{icon_svg('phone', 18)} {t('kontakty_phone_h')}</h3><p><a href="{PHONE_TEL}">{PHONE_DISPLAY}</a></p></div>
-      <div class="info-card"><h3>{icon_svg('message', 18)} {t('kontakty_telegram_h')}</h3><p><a href="{TELEGRAM_URL}" target="_blank" rel="noopener">{t('write_telegram')}</a></p></div>
-      <div class="info-card"><h3>{icon_svg('message', 18)} {t('kontakty_whatsapp_h')}</h3><p><a href="{WHATSAPP_URL}" target="_blank" rel="noopener">WhatsApp</a></p></div>
       <div class="info-card"><h3>{icon_svg('clock', 18)} {t('kontakty_hours_h')}</h3><p>{HOURS[LANG]}</p></div>
       <div class="info-card"><h3>{icon_svg('map-pin', 18)} {t('kontakty_zone_h')}</h3><p>{t('kontakty_zone_p')}</p></div>"""
     body = f"""  <section class="page-hero">
@@ -1691,8 +1685,6 @@ def build_kontakty():
           <h3>{t('kontakty_side_h')}</h3>
           <p>{t('kontakty_side_p')}</p>
           <a href="{PHONE_TEL}" class="btn btn-primary btn-block">{phone_icon()} {PHONE_DISPLAY}</a>
-          <a href="{TELEGRAM_URL}" class="btn btn-glass btn-block" target="_blank" rel="noopener">Telegram</a>
-          <a href="{WHATSAPP_URL}" class="btn btn-glass btn-block" target="_blank" rel="noopener">WhatsApp</a>
         </aside>
       </div>
     </div>
@@ -1715,14 +1707,13 @@ def build_privacy():
         content = f"""
         <h2>1. Общие положения</h2>
         <p>Эта Политика конфиденциальности определяет, как {BRAND} (услугу предоставляет команда KeySos — частный мастер по аварийному вскрытию замков в Киеве) собирает, использует и защищает персональные данные, которые клиенты предоставляют при обращении за услугой.</p>
-        <p>Обращаясь за услугой любым способом (звонок, Telegram, WhatsApp, форма на сайте) или используя этот сайт, вы соглашаетесь с условиями этой Политики.</p>
+        <p>Обращаясь за услугой любым способом (звонок или заявка на сайте) или используя этот сайт, вы соглашаетесь с условиями этой Политики.</p>
 
         <h2>2. Какие данные мы собираем</h2>
         <ul>
           <li>имя (если вы его предоставляете);</li>
           <li>номер телефона — для связи и подтверждения заявки;</li>
-          <li>адрес или район вызова — чтобы направить мастера на место;</li>
-          <li>содержание сообщений в Telegram/WhatsApp, если вы обращаетесь этими каналами.</li>
+          <li>адрес или район вызова — чтобы направить мастера на место.</li>
         </ul>
         <p>Мы не собираем паспортные данные, платёжные реквизиты или иную чувствительную информацию через сайт.</p>
 
@@ -1776,14 +1767,13 @@ def build_privacy():
         content = f"""
         <h2>1. Загальні положення</h2>
         <p>Ця Політика конфіденційності визначає, як {BRAND} (послугу надає команда KeySos — приватний майстер з аварійного відкриття замків у Києві) збирає, використовує та захищає персональні дані, які клієнти надають під час звернення за послугою.</p>
-        <p>Звертаючись за послугою будь-яким способом (дзвінок, Telegram, WhatsApp, форма на сайті) або використовуючи цей сайт, ви погоджуєтесь з умовами цієї Політики.</p>
+        <p>Звертаючись за послугою будь-яким способом (дзвінок або форма на сайті) або використовуючи цей сайт, ви погоджуєтесь з умовами цієї Політики.</p>
 
         <h2>2. Які дані ми збираємо</h2>
         <ul>
           <li>ім'я (якщо ви його надаєте);</li>
           <li>номер телефону — для зв'язку та підтвердження заявки;</li>
-          <li>адресу або район виклику — щоб направити майстра на місце;</li>
-          <li>зміст повідомлень у Telegram/WhatsApp, якщо ви звертаєтесь цими каналами.</li>
+          <li>адресу або район виклику — щоб направити майстра на місце.</li>
         </ul>
         <p>Ми не збираємо паспортні дані, платіжні реквізити чи іншу чутливу інформацію через сайт.</p>
 
@@ -1937,7 +1927,6 @@ def build_rayon_page(area, index):
         <h3>{t('rayon_page_side_h_prefix')} {area_name}</h3>
         <p>{t('rayon_page_side_p')}</p>
         <a href="{PHONE_TEL}" class="btn btn-primary btn-block">{phone_icon()} {PHONE_DISPLAY}</a>
-        <a href="{TELEGRAM_URL}" class="btn btn-glass btn-block" target="_blank" rel="noopener">{t('write_telegram')}</a>
         <div style="margin-top:18px">
         {service_links}
         </div>
