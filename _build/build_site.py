@@ -5,14 +5,14 @@ import json
 import os
 import re
 
-ROOT = r"c:\Users\ПК\Desktop\САЙТ БЕЗ РЕКЛАМ"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 BRAND = "KeySos"
 DOMAIN = "keysos.kyiv.ua"  # TODO: замінити на реальний домен
 PHONE_DISPLAY = "063 296 21 21"
-PHONE_TEL = "tel:+380632962121"
-TELEGRAM_URL = "https://t.me/Nikolay2962121"
-WHATSAPP_URL = "https://wa.me/380632962121"
+PHONE_TEL = "tel:+380993756321"
+TELEGRAM_URL = "https://t.me/keysos_kyiv"
+WHATSAPP_URL = "https://wa.me/380993756321"
 GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/skbof8fgVJkcY4aj8"
 BUSINESS_LAT = 50.420481
 BUSINESS_LNG = 30.5872385
@@ -345,6 +345,8 @@ T = {
         tsiny_lead="Орієнтовна вартість послуг у Києві. Точну ціну майстер озвучить після оцінки складності роботи на місці — без прихованих доплат.",
         tsiny_table_service="Послуга", tsiny_table_price="Ціна",
         tsiny_note="Ціни вказані орієнтовно і можуть відрізнятись залежно від типу замка, часу доби та терміновості виклику. Вартість виїзду майстра диспетчер озвучує ще при дзвінку.",
+        false_call_kyiv="Хибний виклик майстра — Київ",
+        false_call_region="Хибний виклик майстра — Київська область",
         tsiny_faq_heading="Питання про ціни",
         tsiny_title="Ціни на відкриття замків, дверей, авто та сейфів у Києві | KeySos",
         tsiny_description="Прайс-лист на аварійне відкриття дверей, авто, сейфів, заміну та ремонт замків у Києві. Безкоштовний виїзд майстра.",
@@ -449,6 +451,8 @@ T = {
         tsiny_lead="Ориентировочная стоимость услуг в Киеве. Точную цену мастер озвучит после оценки сложности работы на месте — без скрытых доплат.",
         tsiny_table_service="Услуга", tsiny_table_price="Цена",
         tsiny_note="Цены указаны ориентировочно и могут отличаться в зависимости от типа замка, времени суток и срочности вызова. Стоимость выезда мастера диспетчер озвучивает ещё при звонке.",
+        false_call_kyiv="Ложный вызов мастера — Киев",
+        false_call_region="Ложный вызов мастера — Киевская область",
         tsiny_faq_heading="Вопросы о ценах",
         tsiny_title="Цены на вскрытие замков, дверей, авто и сейфов в Киеве | KeySos",
         tsiny_description="Прайс-лист на аварийное вскрытие дверей, авто, сейфов, замену и ремонт замков в Киеве. Бесплатный выезд мастера.",
@@ -911,6 +915,15 @@ def page(title, description, canonical_path, active_path, body, extra_ld=""):
     return f"""<!DOCTYPE html>
 <html lang="{LANG}">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18452982378"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18452982378');
+</script>
 <script>document.documentElement.classList.add('js')</script>
 {head(title, description, canonical_path, extra_ld)}
 </head>
@@ -1071,6 +1084,15 @@ def build_tsiny():
           <td>{sname(s)}</td>
           <td class="price">{sprice(s)}</td>
         </tr>""" for s in SERVICES)
+    rows += f"""
+        <tr>
+          <td>{t('false_call_kyiv')}</td>
+          <td class="price">1000 грн</td>
+        </tr>
+        <tr>
+          <td>{t('false_call_region')}</td>
+          <td class="price">1500 грн</td>
+        </tr>"""
 
     tsiny_faq = {
         "uk": [
